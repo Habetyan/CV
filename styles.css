@@ -202,4 +202,59 @@ footer {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.location {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.language {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.language h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.language p {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.courses {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.courses li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.courses li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+.education .location {
+    font-size: 1rem;
+    margin: 0.25rem 0;
 } 
