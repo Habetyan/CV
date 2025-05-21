@@ -3,76 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Artush Habetyan - Software Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>Web Developer</p>
+        <h1>Artush Habetyan</h1>
+        <p>Software Developer</p>
     </header>
     
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-        <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+        <div class="contact-grid">
+            <p><i class="fas fa-envelope"></i> artush.habetyan@gmail.com</p>
+            <p><i class="fas fa-phone"></i> Available upon request</p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/habetyan" target="_blank">linkedin.com/in/habetyan</a></p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/Habetyan" target="_blank">github.com/Habetyan</a></p>
+        </div>
     </section>
     
     <section id="summary">
-        <h2>Summary</h2>
-        <p>Experienced web developer with a passion for creating clean, responsive websites and applications.</p>
+        <h2>Professional Summary</h2>
+        <p>Experienced software developer with a passion for creating clean, responsive websites and applications. Skilled in modern web technologies and committed to delivering high-quality solutions that meet client needs.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Frontend Development</h3>
+                <ul>
+                    <li>HTML5/CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend Development</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>Python</li>
+                    <li>RESTful APIs</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Technologies</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>VS Code</li>
+                    <li>Command Line</li>
+                </ul>
+            </div>
+        </div>
     </section>
     
     <section id="experience">
-        <h2>Experience</h2>
+        <h2>Professional Experience</h2>
         <div class="job">
-            <h3>Web Developer - Company Name</h3>
-            <p class="date">January 2020 - Present</p>
+            <h3>Software Developer</h3>
+            <p class="company">Current Company</p>
+            <p class="date">2022 - Present</p>
             <ul>
-                <li>Developed and maintained websites using HTML, CSS, and JavaScript</li>
-                <li>Collaborated with designers to implement responsive designs</li>
-                <li>Optimized websites for maximum speed and scalability</li>
+                <li>Develop and maintain full-stack web applications using modern JavaScript frameworks</li>
+                <li>Implement responsive designs and ensure cross-browser compatibility</li>
+                <li>Collaborate with cross-functional teams to deliver high-quality software solutions</li>
+                <li>Optimize application performance and implement best practices</li>
             </ul>
         </div>
         
         <div class="job">
-            <h3>Junior Developer - Previous Company</h3>
-            <p class="date">June 2018 - December 2019</p>
+            <h3>Web Developer</h3>
+            <p class="company">Previous Company</p>
+            <p class="date">2020 - 2022</p>
             <ul>
-                <li>Assisted senior developers in building web applications</li>
-                <li>Implemented new features for existing websites</li>
-                <li>Fixed bugs and improved application performance</li>
+                <li>Developed and maintained websites using HTML, CSS, and JavaScript</li>
+                <li>Collaborated with designers to implement responsive designs</li>
+                <li>Optimized websites for maximum speed and scalability</li>
+                <li>Implemented new features and fixed bugs in existing applications</li>
             </ul>
         </div>
     </section>
     
+    <section id="projects">
+        <h2>Notable Projects</h2>
+        <div class="project">
+            <h3>Personal Portfolio Website</h3>
+            <p>Designed and developed a responsive personal portfolio website using modern web technologies. Implemented custom animations and responsive design principles.</p>
+            <p class="tech-stack">Technologies: HTML5, CSS3, JavaScript, React.js</p>
+        </div>
+        <div class="project">
+            <h3>Task Management Application</h3>
+            <p>Built a full-stack task management application with user authentication and real-time updates.</p>
+            <p class="tech-stack">Technologies: Node.js, Express, MongoDB, React.js</p>
+        </div>
+    </section>
+
     <section id="education">
         <h2>Education</h2>
         <div class="education">
-            <h3>Bachelor of Science in Computer Science</h3>
-            <p>University Name, Graduated May 2018</p>
+            <h3>Bachelor's Degree in Computer Science</h3>
+            <p class="institution">University Name</p>
+            <p class="date">Graduated 2020</p>
         </div>
     </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Git</li>
-            <li>Responsive Design</li>
-        </ul>
-    </section>
-    
+
     <footer>
         <p>Last updated: <span id="last-updated"></span></p>
-        <script>
-            document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
-        </script>
     </footer>
+
+    <script>
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+    </script>
 </body>
 </html> 
