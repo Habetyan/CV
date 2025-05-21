@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer</p>
+    </header>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: your.email@example.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+        <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+    </section>
+    
+    <section id="summary">
+        <h2>Summary</h2>
+        <p>Experienced web developer with a passion for creating clean, responsive websites and applications.</p>
+    </section>
+    
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="job">
+            <h3>Web Developer - Company Name</h3>
+            <p class="date">January 2020 - Present</p>
+            <ul>
+                <li>Developed and maintained websites using HTML, CSS, and JavaScript</li>
+                <li>Collaborated with designers to implement responsive designs</li>
+                <li>Optimized websites for maximum speed and scalability</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <h3>Junior Developer - Previous Company</h3>
+            <p class="date">June 2018 - December 2019</p>
+            <ul>
+                <li>Assisted senior developers in building web applications</li>
+                <li>Implemented new features for existing websites</li>
+                <li>Fixed bugs and improved application performance</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p>University Name, Graduated May 2018</p>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Git</li>
+            <li>Responsive Design</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>Last updated: <span id="last-updated"></span></p>
+        <script>
+            document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+        </script>
+    </footer>
+</body>
+</html> 
