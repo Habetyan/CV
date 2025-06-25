@@ -299,6 +299,9 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -317,23 +320,31 @@
             font-size: 3rem;
         }
 
+        .project-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
         .project-card h3 {
-            padding: 20px 20px 10px;
             color: #2c3e50;
             font-size: 1.3rem;
+            margin-bottom: 15px;
         }
 
         .project-card p {
-            padding: 0 20px;
             color: #666;
             line-height: 1.6;
+            flex: 1;
+            margin-bottom: 15px;
         }
 
         .project-tags {
-            padding: 15px 20px;
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .project-tags span {
@@ -350,9 +361,10 @@
             background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 15px 20px;
             text-decoration: none;
             transition: background 0.3s ease;
+            margin-top: auto;
         }
 
         .project-link:hover {
@@ -731,31 +743,35 @@
                     <div class="project-image">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3>Automated Resume Checker System</h3>
-                    <p>Comprehensive resume analysis tool built with Python that evaluates CVs for ATS compatibility, content quality, and formatting standards. Includes advanced NLP-based skill extraction, keyword optimization scoring, and automated feedback generation to help job seekers improve their resumes for better hiring outcomes.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>NLP</span>
-                        <span>Text Processing</span>
-                        <span>PDF Parsing</span>
-                        <span>Machine Learning</span>
+                    <div class="project-content">
+                        <h3>Automated Resume Checker System</h3>
+                        <p>Comprehensive resume analysis tool built with Python that evaluates CVs for ATS compatibility, content quality, and formatting standards. Includes advanced NLP-based skill extraction, keyword optimization scoring, and automated feedback generation to help job seekers improve their resumes for better hiring outcomes.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>NLP</span>
+                            <span>Text Processing</span>
+                            <span>PDF Parsing</span>
+                            <span>Machine Learning</span>
+                        </div>
+                        <a href="https://github.com/Habetyan/resume_checker" class="project-link" target="_blank">View Project</a>
                     </div>
-                    <a href="https://github.com/Habetyan/resume_checker" class="project-link" target="_blank">View Project</a>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-utensils"></i>
                     </div>
-                    <h3>VibeSip - Yerevan Restaurant Discovery LLM</h3>
-                    <p>Interactive conversational AI application deployed on Hugging Face Spaces that serves as a local dining guide for Yerevan, Armenia. Uses fine-tuned language models to provide personalized restaurant recommendations, detailed venue information, and local dining insights through an intuitive Gradio interface.</p>
-                    <div class="project-tags">
-                        <span>LLM Fine-tuning</span>
-                        <span>Hugging Face</span>
-                        <span>Gradio</span>
-                        <span>Conversational AI</span>
-                        <span>Web Deployment</span>
+                    <div class="project-content">
+                        <h3>VibeSip - Yerevan Restaurant Discovery LLM</h3>
+                        <p>Interactive conversational AI application deployed on Hugging Face Spaces that serves as a local dining guide for Yerevan, Armenia. Uses fine-tuned language models to provide personalized restaurant recommendations, detailed venue information, and local dining insights through an intuitive Gradio interface.</p>
+                        <div class="project-tags">
+                            <span>LLM Fine-tuning</span>
+                            <span>Hugging Face</span>
+                            <span>Gradio</span>
+                            <span>Conversational AI</span>
+                            <span>Web Deployment</span>
+                        </div>
+                        <a href="https://huggingface.co/spaces/artush-habetyan/vibe_sip" class="project-link" target="_blank">View Project</a>
                     </div>
-                    <a href="https://huggingface.co/spaces/artush-habetyan/vibe_sip" class="project-link" target="_blank">View Project</a>
                 </div>
             </div>
         </section>
