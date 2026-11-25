@@ -3,863 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artush Habettyan - Data Scientist & ML Engineer from Yerevan, Armenia. Expert in machine learning, statistical analysis, and natural language processing.">
-    <meta name="keywords" content="Data Scientist, Machine Learning, ML Engineer, Statistics, Python, AI, Yerevan, Armenia">
-    <meta name="author" content="Artush Habettyan">
-    <title>Artush Habettyan - Data Scientist & ML Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-
-        .location {
-            margin-top: 15px !important;
-            font-size: 1.1rem !important;
-        }
-
-        section {
-            padding: 50px;
-            border-bottom: 1px solid #eee;
-        }
-
-        section:last-of-type {
-            border-bottom: none;
-        }
-
-        h2 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-
-        .contact-grid p {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-grid p:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .contact-grid a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .contact-grid a:hover {
-            text-decoration: underline;
-        }
-
-        .skills-progress {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            gap: 20px;
-        }
-
-        .skill-name {
-            font-weight: 500;
-            min-width: 200px;
-            color: #2c3e50;
-        }
-
-        .skill-progress-bar {
-            flex: 1;
-            height: 12px;
-            background: #ecf0f1;
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-progress-value {
-            height: 100%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 6px;
-            transition: width 2s ease-in-out;
-            position: relative;
-        }
-
-        .skill-progress-value::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shine 2s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .skill-percentage {
-            font-weight: 600;
-            color: #667eea;
-            min-width: 45px;
-            text-align: right;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #667eea;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .skill-category h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .skill-category li::before {
-            content: '▸';
-            color: #667eea;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .skill-category li:last-child {
-            border-bottom: none;
-        }
-
-        .job {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .job:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .job h3 {
-            color: #2c3e50;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .company {
-            font-weight: 600;
-            color: #667eea;
-            font-size: 1.1rem;
-        }
-
-        .date {
-            color: #7f8c8d;
-            font-style: italic;
-            margin: 10px 0;
-        }
-
-        .job ul {
-            margin-top: 15px;
-        }
-
-        .job li {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .project-image {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .project-image i {
-            font-size: 3rem;
-        }
-
-        .project-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .project-card h3 {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .project-card p {
-            color: #666;
-            line-height: 1.6;
-            flex: 1;
-            margin-bottom: 15px;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .project-tags span {
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .project-link {
-            display: block;
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 15px 20px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            margin-top: auto;
-        }
-
-        .project-link:hover {
-            background: #34495e;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-dot {
-            width: 20px;
-            height: 20px;
-            background: #667eea;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            border: 4px solid white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .timeline-date {
-            font-weight: 600;
-            color: #667eea;
-            font-size: 1.1rem;
-            min-width: 80px;
-            text-align: center;
-        }
-
-        .timeline-content {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            flex: 1;
-            margin: 0 40px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .timeline-content h3 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .education {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid #667eea;
-        }
-
-        .education h3 {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .institution {
-            font-weight: 600;
-            color: #667eea;
-            font-size: 1.1rem;
-        }
-
-        .courses {
-            margin-top: 15px;
-        }
-
-        .courses li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .courses li::before {
-            content: '•';
-            color: #667eea;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .language {
-            text-align: center;
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .language:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .language h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .language-progress {
-            width: 100%;
-            height: 8px;
-            background: #ecf0f1;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-top: 15px;
-        }
-
-        .language-bar {
-            height: 100%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 4px;
-            transition: width 2s ease-in-out;
-        }
-
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-
-        .interest-item {
-            text-align: center;
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .interest-item:hover {
-            transform: translateY(-10px);
-            border-color: #667eea;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .interest-item i {
-            font-size: 2.5rem;
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-
-        .interest-item h3 {
-            color: #2c3e50;
-            font-size: 1.1rem;
-        }
-
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 10px;
-            }
-            
-            header h1 {
-                font-size: 2.5rem;
-            }
-            
-            section {
-                padding: 30px 20px;
-            }
-            
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-dot {
-                left: 20px;
-            }
-            
-            .timeline-content {
-                margin-left: 50px;
-                margin-right: 0;
-            }
-            
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 50px;
-                margin-right: 0;
-            }
-            
-            .skill-item {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 10px;
-            }
-            
-            .skill-name {
-                min-width: auto;
-            }
-        }
-    </style>
+    <title>Artush Habetyan, NLP / Machine Learning Engineer</title>
+    <meta name="description" content="NLP/ML engineer in Yerevan specializing in fine-tuning language models, on-device optimization and production deployment. Built Grich, the #1 Armenian punctuation model on ArmBench.">
+    <meta name="author" content="Artush Habetyan">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Artush Habetyan, NLP / Machine Learning Engineer">
+    <meta property="og:description" content="Fine-tuning language models, on-device optimization and production deployment. Built Grich, the #1 Armenian punctuation model on ArmBench. Best Paper Award, IEEE CODASSCA 2026.">
+    <meta property="og:url" content="https://habetyan.github.io/CV/">
+    <link rel="canonical" href="https://habetyan.github.io/CV/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b2440'/%3E%3Ccircle cx='16' cy='10.5' r='3.4' fill='%23f0688c'/%3E%3Ccircle cx='16' cy='21.5' r='3.4' fill='%23f0688c'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Noto+Serif:wght@500;600&family=Noto+Serif+Armenian:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Artush Habettyan</h1>
-            <p>Data Scientist</p>
-            <p class="location"><i class="fas fa-map-marker-alt"></i> Yerevan, Armenia</p>
-        </header>
-        
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <div class="contact-grid">
-                <p><i class="fas fa-envelope"></i> work.habetyan@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +37444990924</p>
-                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/habetyan" target="_blank">linkedin.com/in/habetyan</a></p>
-                <p><i class="fab fa-github"></i> <a href="https://github.com/Habetyan" target="_blank">github.com/Habetyan</a></p>
-                <p><i class="fab fa-telegram"></i> <a href="https://t.me/habetyan" target="_blank">@habetyan</a></p>
-            </div>
-        </section>
-        
-        <section id="profile">
-            <h2>Professional Profile</h2>
-            <p>Data Scientist with over four years of hands-on experience in machine learning, statistical analysis, and natural language processing. Holds a BSc in Statistics, is currently pursuing an MSc in Applied Statistics and Data Science, and has completed a two-year specialized AI retraining program at GeekBrains Academy. Possesses a strong track record of designing and deploying predictive models, conducting A/B testing, and fine-tuning Large Language Models (LLMs).
-            </p>
-        </section>
-        
-        
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming & Tools</h3>
-                    <ul>
-                        <li>Python (DS stack)</li>
-                        <li>Async</li>
-                        <li>Git Version Control</li>
-                        <li>Pydantic</li>
-                    </ul>
+    <header class="masthead">
+        <div class="wrap">
+            <div class="identity">
+                <div>
+                    <h1>Artush Habetyan</h1>
+                    <p class="role">NLP / Machine Learning Engineer</p>
+                    <p class="place">Yerevan, Armenia</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <ul>
-                        <li>Predictive Modeling</li>
-                        <li>Feature Engineering</li>
-                        <li>Anomaly Detection</li>
-                        <li>Deep Learning</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Statistics</h3>
-                    <ul>
-                        <li>Statistical Analysis</li>
-                        <li>A/B Testing</li>
-                        <li>Hypothesis Testing</li>
-                        <li>Regression Analysis</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>NLP</h3>
-                    <ul>
-                        <li>Text Preprocessing</li>
-                        <li>Embeddings (TF-IDF, BERT)</li>
-                        <li>Named Entity Recognition</li>
-                        <li>Summarization & LLM Fine-tuning</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Engineering</h3>
-                    <ul>
-                        <li>MySQL, MongoDB</li>
-                        <li>PySpark</li>
-                        <li>ETL Pipelines</li>
-                        <li>Data Processing</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Visualization & Deployment</h3>
-                    <ul>
-                        <li>Plotly, Bokeh</li>
-                        <li>Dash, Streamlit</li>
-                        <li>Gradio, Render</li>
-                        <li>Fast Api</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section id="experience">
-            <h2>Employment History</h2>
-            <div class="job">
-                <h3>Data Scientist</h3>
-                <p class="company">Freelance</p>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
-                <p class="date">April 2023 – Present</p>
-                <ul>
-                    <li>Designed and deployed predictive models integrated into web applications to support business decision-making and user engagement</li>
-                    <li>Led the end-to-end development of machine learning pipelines from data preprocessing to model evaluation and deployment</li>
-                    <li>Collaborated directly with international clients to define business goals and deliver custom ML/NLP solutions</li>
-                    <li>Fine-tuned Large Language Models (LLMs) for client-specific tasks, including summarization, information extraction, and content generation</li>
-                </ul>
-            </div>
-            
-            <div class="job">
-                <h3>Data Analyst</h3>
-                <p class="company">Upwork</p>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
-                <p class="date">January 2022 – March 2023</p>
-                <ul>
-                    <li>Conducted A/B tests to compare the performance of different versions of web pages and apps</li>
-                    <li>Developed advanced statistical models to identify customer trends and predict future sales growth with high accuracy</li>
-                    <li>Implemented advanced analytics techniques such as linear and logistic regression to identify correlations and predict outcomes</li>
-                    <li>Developed an ETL pipeline to streamline data ingestion and processing for analysis, reducing processing time</li>
+                <ul class="contacts">
+                    <li><a href="mailto:work.habetyan@gmail.com">work.habetyan@gmail.com</a></li>
+                    <li><a href="tel:+37444990924">+374 44 990924</a></li>
+                    <li><a href="https://github.com/Habetyan" rel="me noopener">github.com/Habetyan</a></li>
+                    <li><a href="https://www.linkedin.com/in/habetyan" rel="me noopener">linkedin.com/in/habetyan</a></li>
+                    <li><a href="https://huggingface.co/artush-habetyan" rel="me noopener">huggingface.co/artush-habetyan</a></li>
+                    <li class="no-print"><a href="Artush_Habetyan_CV.pdf">Download this CV as PDF</a></li>
                 </ul>
             </div>
 
-            <div class="job">
-                <h3>Web Scraping Specialist</h3>
-                <p class="company">Upwork</p>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
-                <p class="date">March 2020 – December 2020</p>
-                <ul>
-                    <li>Developed and implemented web scraping solutions to extract and analyze data from diverse online sources</li>
-                    <li>Collaborated with clients to identify data requirements and deliver customized datasets</li>
-                    <li>Utilized Python libraries such as BeautifulSoup and Scrapy for efficient data collection and processing</li>
-                    <li>Conducted data cleaning and preparation to ensure high-quality datasets for analysis</li>
-                    <li>Employed analytical techniques to derive insights and support decision-making processes</li>
-                </ul>
+            <figure class="specimen specimen-lead" id="grich-demo">
+                <figcaption class="specimen-intro">
+                    <p>Recorded output of <a href="https://huggingface.co/artush-habetyan/grich-s" rel="noopener">Grich-S</a>, my 50&nbsp;MB on-device punctuation model for Armenian. Sentence from <span data-role="source">the Grich-S model card</span>.</p>
+                    <button type="button" class="next no-print" data-role="next" hidden>Show another example <span class="count" data-role="count">1 of 5</span></button>
+                </figcaption>
+                <div class="specimen-line">
+                    <span class="specimen-tag">Without punctuation</span>
+                    <p class="specimen-text is-raw" lang="hy" data-role="input">բարև Անի ջան ինչպես ես</p>
+                </div>
+                <div class="specimen-line">
+                    <span class="specimen-tag">Restored by Grich-S</span>
+                    <p class="specimen-text" lang="hy" data-role="output" aria-live="polite"><span class="fix">Բ</span>արև<ins class="fix">,</ins> Անի ջան<ins class="fix">,</ins> ինչպե<ins class="fix">՞</ins>ս ես<ins class="fix">։</ins></p>
+                </div>
+            </figure>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="row" id="summary">
+            <h2>Summary</h2>
+            <div class="content">
+                <p class="lead">NLP/ML engineer specializing in fine-tuning language models, on-device optimization and production deployment. Built an on-device Armenian punctuation model that ranks #1 on the public ArmBench leaderboard, ahead of GPT-5.2 Pro and Gemini 3 Pro.</p>
+                <p>MSc in Applied Statistics and Data Science; Best Paper Award, IEEE CODASSCA 2026. 5+ years of freelance data science and model development for international clients.</p>
             </div>
         </section>
 
-        <section id="portfolio">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-file-alt"></i>
+        <section class="row" id="experience">
+            <h2>Experience</h2>
+            <div class="content">
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Freelance Data Scientist &amp; ML Engineer</h3>
+                        <p class="when">Mar 2020 – Present</p>
                     </div>
-                    <div class="project-content">
-                        <h3>Automated Resume Checker System</h3>
-                        <p>Comprehensive resume analysis tool built with Python that evaluates CVs for ATS compatibility, content quality, and formatting standards. Includes advanced NLP-based skill extraction, keyword optimization scoring, and automated feedback generation to help job seekers improve their resumes for better hiring outcomes.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>NLP</span>
-                            <span>Text Processing</span>
-                            <span>PDF Parsing</span>
-                            <span>Machine Learning</span>
+                    <p class="where">Upwork and direct clients, remote</p>
+                    <ul>
+                        <li>Fine-tuned LLMs for client summarization, information-extraction and content-generation tasks.</li>
+                        <li>Built retrieval-augmented (RAG) assistants that answer from client documents and external APIs, served through Gradio and chat front ends.</li>
+                        <li>Built document-parsing and information-extraction pipelines: PDF parsing, skill and entity extraction, and structured output validated with Pydantic.</li>
+                        <li>Built and deployed predictive models behind web applications (FastAPI, Streamlit, Gradio).</li>
+                        <li>Collected and cleaned custom datasets with Scrapy and BeautifulSoup, and built ETL pipelines for downstream analysis.</li>
+                        <li>Designed and analysed A/B tests for web pages and apps.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="row" id="projects">
+            <h2>Projects</h2>
+            <div class="content">
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Grich</h3>
+                        <p class="links"><a href="https://huggingface.co/artush-habetyan/grich-s" rel="noopener">Model (Grich-S)</a> <a href="https://huggingface.co/datasets/artush-habetyan/hamaket" rel="noopener">Test set (HamaKet)</a></p>
+                    </div>
+                    <p class="where">Armenian punctuation restoration model</p>
+                    <ul>
+                        <li>Trained a compact 47.8M-parameter encoder that tags every gap between two letters with an exact edit; a deterministic decoder writes the text and never changes a letter.</li>
+                        <li>Runs on-device: 49.8 MB as an 8-bit ONNX file, 23 ms for a 30-word sentence on a Pixel 7 inside an Android keyboard.</li>
+                        <li>Ranked #1 on the public ArmBench punctuation leaderboard (0.793), ahead of GPT-5.2 Pro (0.784) and Gemini 3 Pro (0.739).</li>
+                        <li>Built HamaKet, a 1,144-sentence test set from the two Eastern Armenian Universal Dependencies treebanks, scored only where human editors, Claude and Gemini agree; 322 sentences were reviewed by a native speaker.</li>
+                        <li>On HamaKet, Grich-S scores F1 0.926: ahead of Claude Sonnet 5.5, Claude Haiku 5.5 and every public punctuation model, and behind only Claude Opus 5.5.</li>
+                        <li>Analysed errors by syntactic construction using Universal Dependencies trees; showed that clean consensus labels add +0.026 F1 with minutes of fine-tuning.</li>
+                    </ul>
+                    <figure class="chart">
+                        <figcaption class="chart-title">HamaKet test set, F1 over agreed marks</figcaption>
+                        <p class="chart-hint no-print" aria-hidden="true">Hover or tap a row for its error count.</p>
+                        <ol class="bars">
+                            <li tabindex="0" style="--v: 0.970">
+                                <span class="bar-name">Claude Opus 5.5</span>
+                                <span class="bar-track"><span class="bar"></span><span class="bar-value">0.970</span></span>
+                                <span class="bar-more">Claude Opus 5.5: 129 errors, 92.5% of sentences fully correct</span>
+                            </li>
+                            <li tabindex="0" class="is-self" style="--v: 0.926">
+                                <span class="bar-name">Grich-S <span class="bar-note">50 MB, on-device</span></span>
+                                <span class="bar-track"><span class="bar"></span><span class="bar-value">0.926</span></span>
+                                <span class="bar-more">Grich-S: 315 errors, 83.0% of sentences fully correct</span>
+                            </li>
+                            <li tabindex="0" style="--v: 0.919">
+                                <span class="bar-name">Claude Sonnet 5.5</span>
+                                <span class="bar-track"><span class="bar"></span><span class="bar-value">0.919</span></span>
+                                <span class="bar-more">Claude Sonnet 5.5: 345 errors, 80.6% of sentences fully correct</span>
+                            </li>
+                            <li tabindex="0" style="--v: 0.868">
+                                <span class="bar-name">Claude Haiku 5.5</span>
+                                <span class="bar-track"><span class="bar"></span><span class="bar-value">0.868</span></span>
+                                <span class="bar-more">Claude Haiku 5.5: 543 errors, 71.6% of sentences fully correct</span>
+                            </li>
+                            <li tabindex="0" style="--v: 0.785">
+                                <span class="bar-name">Best public punctuation model</span>
+                                <span class="bar-track"><span class="bar"></span><span class="bar-value">0.785</span></span>
+                                <span class="bar-more">Best public punctuation model: 1,086 errors, 53.7% of sentences fully correct</span>
+                            </li>
+                            <li tabindex="0" style="--v: 0.764">
+                                <span class="bar-name">Qwen3 235B</span>
+                                <span class="bar-track"><span class="bar"></span><span class="bar-value">0.764</span></span>
+                                <span class="bar-more">Qwen3 235B: 943 errors, 43.4% of sentences fully correct</span>
+                            </li>
+                            <li tabindex="0" style="--v: 0.741">
+                                <span class="bar-name">Gemma 3 27B</span>
+                                <span class="bar-track"><span class="bar"></span><span class="bar-value">0.741</span></span>
+                                <span class="bar-more">Gemma 3 27B: 1,000 errors, 50.2% of sentences fully correct</span>
+                            </li>
+                        </ol>
+                        <p class="chart-note">LLMs were prompted zero-shot. Grich-S was adapted on other documents of the same treebanks. The best public model is AraGevorgyan/armenian-punctuation-restoration. The <a href="https://huggingface.co/datasets/artush-habetyan/hamaket#results" rel="noopener">dataset card</a> has all ten systems, their outputs and the scorer.</p>
+                    </figure>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Formatting ASR transcripts with copy-augmented encoder-decoders</h3>
+                    </div>
+                    <p class="where">MSc thesis, published at IEEE CODASSCA 2026. <a href="papers/asr-transcript-formatting-copy-mechanism.pdf">Paper (PDF)</a></p>
+                    <figure class="specimen specimen-inline">
+                        <div class="specimen-line">
+                            <span class="specimen-tag">Raw ASR output</span>
+                            <p class="specimen-text is-raw">hi john can you send me the report by friday thanks</p>
                         </div>
-                        <a href="https://github.com/Habetyan/resume_checker" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>VibeSip - Yerevan Restaurant Discovery LLM</h3>
-                        <p>Interactive conversational AI application deployed on Hugging Face Spaces that serves as a local dining guide for Yerevan, Armenia. Uses fine-tuned language models to provide personalized restaurant recommendations, detailed venue information, and local dining insights through an intuitive Gradio interface.</p>
-                        <div class="project-tags">
-                            <span>LLM Fine-tuning</span>
-                            <span>Hugging Face</span>
-                            <span>Gradio</span>
-                            <span>Conversational AI</span>
-                            <span>Web Deployment</span>
+                        <div class="specimen-line">
+                            <span class="specimen-tag">Formatted</span>
+                            <p class="specimen-text"><span class="fix">H</span>i <span class="fix">J</span>ohn<ins class="fix">,</ins> can you send me the report by <span class="fix">F</span>riday<ins class="fix">?</ins> <span class="fix">T</span>hanks<ins class="fix">.</ins></p>
                         </div>
-                        <a href="https://huggingface.co/spaces/artush-habetyan/vibe_sip" class="project-link" target="_blank">View Project</a>
+                        <figcaption>Illustrative example.</figcaption>
+                    </figure>
+                    <ul>
+                        <li>Added a position-aware pointer-generator gate (PG-pos) to flan-T5-XL fine-tuned with LoRA to restore punctuation, casing and formatting in raw ASR output.</li>
+                        <li>57.6% exact match and 0.0201 CER on a 3,965-sample benchmark.</li>
+                    </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>RegexForge</h3>
+                        <p class="links"><a href="https://github.com/Habetyan/regexforge" rel="noopener">Code</a> <a href="https://huggingface.co/spaces/artush-habetyan/regexforge" rel="noopener">Live demo</a></p>
                     </div>
-                </div>
+                    <p class="where">Fine-tuning a 1.5B model to write regular expressions</p>
+                    <ul>
+                        <li>Two-stage training on a single 8 GB laptop GPU: QLoRA supervised fine-tuning, then GRPO with a reward computed by running the generated regex against held-out test strings. No reward model and no LLM judge.</li>
+                        <li>71.4% strict functional accuracy in-domain, against 2.3% for the few-shot base model and 21.2% for Claude Sonnet 4.5 on the same prompt and verifier. Out-of-domain the result reverses (27.5% vs 67.4%), and both are reported.</li>
+                    </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Semantic Change Radar</h3>
+                        <p class="links"><a href="https://github.com/Habetyan/semantic-change-radar" rel="noopener">Code</a> <a href="https://huggingface.co/spaces/artush-habetyan/semantic-change-radar-demo" rel="noopener">Recorded examples</a></p>
+                    </div>
+                    <p class="where">Finds meaning changes between two versions of a document</p>
+                    <ul>
+                        <li>Aligns passages with MiniLM embeddings and lexical similarity, then uses bidirectional NLI with numeric, condition and actor guards to separate paraphrases from material edits.</li>
+                        <li>Runs on CPU with two small ONNX models, no API key or GPU, and shows the source evidence beside every finding.</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Education & Qualifications</h2>
-            <div class="education">
-                <h3>Master of Sciences in Applied Statistics and Data Science</h3>
-                <p class="institution">Yerevan State University</p>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> Yerevan, Armenia</p>
-                <p class="date">September 2024 – June 2026</p>
-                <ul class="courses">
-                    <li>Multivariate Statistics</li>
-                    <li>Optimization for Machine Learning</li>
-                    <li>Time Series Analysis</li>
-                    <li>Natural Language Processing</li>
+        <section class="row" id="publications">
+            <h2>Publications and awards</h2>
+            <div class="content">
+                <ul class="plain">
+                    <li><strong>Best Paper Award</strong>, IEEE CODASSCA 2026, Yerevan.</li>
+                    <li><strong>Artush Habetyan</strong>, Hrant Baloyan, Davit Karamyan. <cite>Formatting Speech Recognition Transcripts Using Encoder-Decoder Models with Copy Mechanism.</cite> IEEE CODASSCA 2026. <a href="papers/asr-transcript-formatting-copy-mechanism.pdf">Authors' version (PDF)</a></li>
+                    <li>Hrant Baloyan, <strong>Artush Habetyan</strong>, Davit Karamyan. <cite>Task-Conditioned Fine-Tuning of Small Language Models for ASR Transcript Formatting.</cite> IEEE CODASSCA 2026.</li>
                 </ul>
-            </div>
-
-            <div class="education">
-                <h3>Diploma in Artificial Intelligence</h3>
-                <p class="institution">GeekBrains University</p>
-                <p class="date">January 2021 – September 2024</p>
-                <ul class="courses">
-                    <li>Product Analytics</li>
-                    <li>Relational Database Management Systems (MySQL)</li>
-                    <li>Machine Learning Algorithms</li>
-                    <li>Neural Networks (Keras, TensorFlow, PyTorch)</li>
-                </ul>
-                <p style="margin-top: 15px; font-style: italic; color: #667eea;">
-                    <strong>Final Project:</strong> Deployed Chatbot on Telegram Using Dialogflow
-                </p>
-            </div>
-
-            <div class="education">
-                <h3>Bachelor of Science in Statistics</h3>
-                <p class="institution">Armenian State University of Economics</p>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> Yerevan, Armenia</p>
-                <p class="date">January 2017 – January 2020</p>
-                <ul class="courses">
-                    <li>Probability Theory</li>
-                    <li>Statistics</li>
-                    <li>Mathematical Analysis</li>
-                    <li>Econometrics</li>
-                    <li>Calculus and Linear Algebra</li>
-                </ul>
-                <p style="margin-top: 15px; font-style: italic; color: #667eea;">
-                    <strong>Final Project:</strong> Armenian Macroeconomic Indicator Analysis
-                </p>
             </div>
         </section>
 
-        <section id="languages">
-            <h2>Language Proficiency</h2>
-            <div class="languages-grid">
-                <div class="language">
-                    <h3>Armenian</h3>
-                    <p>Native Fluency</p>
-                    <div class="language-progress">
-                        <div class="language-bar" style="width: 100%"></div>
+        <section class="row" id="education">
+            <h2>Education</h2>
+            <div class="content">
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>MSc, Applied Statistics and Data Science</h3>
+                        <p class="when">2024 – 2026</p>
                     </div>
-                </div>
-                <div class="language">
-                    <h3>English</h3>
-                    <p>Professional Proficiency</p>
-                    <div class="language-progress">
-                        <div class="language-bar" style="width: 100%"></div>
+                    <p class="where">Yerevan State University</p>
+                    <p>Thesis: Formatting Speech Recognition Transcripts Using Encoder-Decoder Models with Copy Mechanism.</p>
+                </article>
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Diploma in Artificial Intelligence</h3>
+                        <p class="when">2021 – 2024</p>
                     </div>
-                </div>
-                <div class="language">
-                    <h3>Russian</h3>
-                    <p>Professional Proficiency</p>
-                    <div class="language-progress">
-                        <div class="language-bar" style="width: 100%"></div>
+                    <p class="where">GeekBrains University, online</p>
+                </article>
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>BSc, Statistics</h3>
+                        <p class="when">2017 – 2020</p>
                     </div>
-                </div>
+                    <p class="where">Armenian State University of Economics</p>
+                </article>
             </div>
         </section>
 
-        <footer>
-            <p>Last updated: <span id="last-updated"></span></p>
-            <p class="copyright">© 2025 Artush Habettyan. All rights reserved.</p>
-        </footer>
+        <section class="row" id="skills">
+            <h2>Skills</h2>
+            <div class="content">
+                <dl class="skills">
+                    <dt>ML and NLP</dt>
+                    <dd>PyTorch, Hugging Face Transformers, PEFT (LoRA, QLoRA), seq2seq and pointer-generator models, LLM fine-tuning and evaluation, reinforcement fine-tuning (GRPO), RAG (FAISS, BM25), scikit-learn</dd>
+                    <dt>Deployment</dt>
+                    <dd>FastAPI, Gradio, Streamlit, INT8 quantization, ONNX, on-device inference (Android), Hugging Face Spaces</dd>
+                    <dt>Data and statistics</dt>
+                    <dd>PySpark, MySQL, MongoDB, A/B testing, regression and time-series analysis</dd>
+                    <dt>Languages</dt>
+                    <dd>Armenian (native), English (professional), Russian (professional)</dd>
+                </dl>
+            </div>
+        </section>
+    </main>
 
-        <script>
-            document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
-        </script>
-    </div>
+    <footer class="wrap footer">
+        <p>© 2026 Artush Habetyan. Last updated November 2026. Example sentences from the HamaKet test set are CC BY-SA 4.0, from the UD_Armenian-ArmTDP and UD_Armenian-BSUT treebanks.</p>
+    </footer>
+
+    <!-- Header examples: each "output" is a recorded Grich-S output, copied
+         unchanged. To add one, append an object here; the marks the model
+         added are worked out by comparing input and output. -->
+    <script type="application/json" id="grich-examples">
+    [
+        {"input": "բարև Անի ջան ինչպես ես", "output": "Բարև, Անի ջան, ինչպե՞ս ես։", "source": "the Grich-S model card", "href": "https://huggingface.co/artush-habetyan/grich-s"},
+        {"input": "Ոչ փակ պատուհանը փրկեց ոչ ճակատին կապված շապիկը", "output": "Ո՛չ փակ պատուհանը փրկեց, ո՛չ ճակատին կապված շապիկը։", "source": "the HamaKet test set", "href": "https://huggingface.co/datasets/artush-habetyan/hamaket"},
+        {"input": "Վախը առկա է Անմոռուկի փակուղու բոլոր պատմվածքներում", "output": "Վախը առկա է «Անմոռուկի փակուղու» բոլոր պատմվածքներում։", "source": "the HamaKet test set", "href": "https://huggingface.co/datasets/artush-habetyan/hamaket"},
+        {"input": "Թիմային հաղթանակը նվաճեց Հայաստանի առաջին հավաքականը 61 միավոր", "output": "Թիմային հաղթանակը նվաճեց Հայաստանի առաջին հավաքականը՝ 61 միավոր։", "source": "the HamaKet test set", "href": "https://huggingface.co/datasets/artush-habetyan/hamaket"},
+        {"input": "Ստեղծարար աշխատանքը և բարիքի ստեղծումը նպատակ է այլ ոչ միջոց", "output": "Ստեղծարար աշխատանքը և բարիքի ստեղծումը նպատակ է, այլ ոչ միջոց։", "source": "the HamaKet test set", "href": "https://huggingface.co/datasets/artush-habetyan/hamaket"}
+    ]
+    </script>
+    <script>
+    (function () {
+        var demo = document.getElementById('grich-demo');
+        var data = document.getElementById('grich-examples');
+        if (!demo || !data) return;
+
+        var examples;
+        try { examples = JSON.parse(data.textContent); } catch (e) { return; }
+        if (!examples.length) return;
+
+        var inputEl = demo.querySelector('[data-role="input"]');
+        var outputEl = demo.querySelector('[data-role="output"]');
+        var sourceEl = demo.querySelector('[data-role="source"]');
+        var nextBtn = demo.querySelector('[data-role="next"]');
+        var countEl = demo.querySelector('[data-role="count"]');
+        var index = 0;
+
+        // Walk the output against the input. A character the input does not
+        // have at that position is a mark the model added; a letter that
+        // differs only in case is one it capitalised.
+        function segments(input, output) {
+            var src = Array.from(input);
+            var out = Array.from(output);
+            var segs = [];
+            var j = 0;
+            out.forEach(function (ch) {
+                var kind = 'same';
+                if (j < src.length && ch === src[j]) {
+                    j += 1;
+                } else if (j < src.length && ch.toLowerCase() === src[j].toLowerCase()) {
+                    kind = 'recased';
+                    j += 1;
+                } else if (!/\s/.test(ch)) {
+                    kind = 'added';
+                }
+                var last = segs[segs.length - 1];
+                if (last && last.kind === kind) last.text += ch;
+                else segs.push({ kind: kind, text: ch });
+            });
+            return segs;
+        }
+
+        function show(i) {
+            var ex = examples[i];
+            var segs = segments(ex.input, ex.output);
+            var fixes = segs.filter(function (s) { return s.kind !== 'same'; }).length;
+            var step = Math.min(0.35, 1.6 / Math.max(fixes, 1));
+            var n = 0;
+
+            inputEl.textContent = ex.input;
+            outputEl.textContent = '';
+            segs.forEach(function (s) {
+                if (s.kind === 'same') {
+                    outputEl.appendChild(document.createTextNode(s.text));
+                    return;
+                }
+                var el = document.createElement(s.kind === 'added' ? 'ins' : 'span');
+                el.className = 'fix';
+                el.textContent = s.text;
+                el.style.animationDelay = (0.3 + n * step).toFixed(2) + 's';
+                n += 1;
+                outputEl.appendChild(el);
+            });
+
+            sourceEl.textContent = '';
+            if (ex.href) {
+                var a = document.createElement('a');
+                a.href = ex.href;
+                a.rel = 'noopener';
+                a.textContent = ex.source;
+                sourceEl.appendChild(a);
+            } else {
+                sourceEl.textContent = ex.source;
+            }
+            countEl.textContent = (i + 1) + ' of ' + examples.length;
+        }
+
+        show(0);
+        if (examples.length > 1) {
+            nextBtn.hidden = false;
+            nextBtn.addEventListener('click', function () {
+                index = (index + 1) % examples.length;
+                show(index);
+            });
+        }
+    })();
+    </script>
 </body>
 </html>
