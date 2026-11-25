@@ -470,6 +470,10 @@ h3 {
     white-space: nowrap;
 }
 
+.plain a + a {
+    margin-left: 0.5rem;
+}
+
 .links a + a {
     margin-left: 0.9rem;
 }
