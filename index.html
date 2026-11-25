@@ -148,17 +148,45 @@
                     <div class="entry-head">
                         <h3>Formatting ASR transcripts with copy-augmented encoder-decoders</h3>
                     </div>
-                    <p class="where">MSc thesis, published at IEEE CODASSCA 2026. <a href="papers/asr-transcript-formatting-copy-mechanism.pdf">Paper (PDF)</a></p>
-                    <figure class="specimen specimen-inline">
+                    <p class="where">MSc thesis, published at IEEE CODASSCA 2026.</p>
+                    <p class="links"><a href="https://huggingface.co/spaces/artush-habetyan/transcriptsmith" rel="noopener">Live demo</a> <a href="https://huggingface.co/artush-habetyan/transcriptsmith" rel="noopener">Model</a> <a href="papers/asr-transcript-formatting-copy-mechanism.pdf">Paper (PDF)</a></p>
+                    <figure class="specimen specimen-inline" id="pg-demo">
+                        <div class="pg-tabs no-print" role="group" aria-label="Task" data-role="tabs" hidden></div>
                         <div class="specimen-line">
                             <span class="specimen-tag">Raw ASR output</span>
-                            <p class="specimen-text is-raw">hi john can you send me the report by friday thanks</p>
+                            <p class="specimen-text is-raw" data-role="input">males had a median income of forty one thousand seven hundred eighty three dollars versus thirty thousand two hundred forty four dollars for females</p>
                         </div>
                         <div class="specimen-line">
                             <span class="specimen-tag">Formatted</span>
-                            <p class="specimen-text"><span class="fix">H</span>i <span class="fix">J</span>ohn<ins class="fix">,</ins> can you send me the report by <span class="fix">F</span>riday<ins class="fix">?</ins> <span class="fix">T</span>hanks<ins class="fix">.</ins></p>
+                            <p class="specimen-text" data-role="output" aria-live="polite"><span class="fix">Male</span>s had a median income of <span class="fix">$41,783</span> versus <span class="fix">$30,244</span> for females<span class="fix">.</span></p>
                         </div>
-                        <figcaption>Illustrative example.</figcaption>
+                        <div class="specimen-line pg-line">
+                            <span class="specimen-tag">p_gen per piece</span>
+                            <p class="visually-hidden" data-role="summary">The gate generates the capitalised "Male", both dollar amounts and the final full stop; every other piece is copied from the input.</p>
+                            <p class="pg-row" aria-hidden="true" data-role="row">
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">Male</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">s</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">had</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">a</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">median</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">income</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">of</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">$4</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">1,</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">78</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">3</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">versus</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">$30</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 0.98"><span class="pg-piece">,</span><span class="pg-val">0.98</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">24</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">4</span><span class="pg-val">1.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">for</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">female</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell" style="--p: 0.00"><span class="pg-piece">s</span><span class="pg-val">0.00</span></span>
+                            <span class="pg-cell is-gen" style="--p: 1.00"><span class="pg-piece">.</span><span class="pg-val">1.00</span></span>
+                            </p>
+                        </div>
+                        <figcaption>Recorded from the live demo. Near 0 the gate copies the piece from the input; near 1 it generates it. <a href="https://huggingface.co/spaces/artush-habetyan/transcriptsmith" rel="noopener">Try your own sentence</a>.</figcaption>
                     </figure>
                     <ul>
                         <li>Added a position-aware pointer-generator gate (PG-pos) to flan-T5-XL fine-tuned with LoRA to restore punctuation, casing and formatting in raw ASR output.</li>
@@ -349,6 +377,91 @@
                 show(index);
             });
         }
+    })();
+    </script>
+    <!-- Thesis model examples: recorded from the Transcriptsmith demo
+         (flan-T5-XL + LoRA + PG-pos, bf16, greedy decoding). Each piece is
+         [text, p_gen, joined-to-previous-piece]. -->
+    <script type="application/json" id="pg-examples">
+    [
+        {"label": "Numbers and punctuation", "task": "BOTH", "input": "males had a median income of forty one thousand seven hundred eighty three dollars versus thirty thousand two hundred forty four dollars for females", "pieces": [["Male", 1.0, 0], ["s", 0.0, 1], ["had", 0.0, 0], ["a", 0.0, 0], ["median", 0.0, 0], ["income", 0.0, 0], ["of", 0.0, 0], ["$4", 1.0, 0], ["1,", 1.0, 1], ["78", 1.0, 1], ["3", 1.0, 1], ["versus", 0.0, 0], ["$30", 1.0, 0], [",", 0.98, 1], ["24", 1.0, 1], ["4", 1.0, 1], ["for", 0.0, 0], ["female", 0.0, 0], ["s", 0.0, 1], [".", 1.0, 1]]},
+        {"label": "Punctuation only", "task": "PUNCT", "input": "she arrived off hagushi beach on the twenty first and operated there through the end of the month", "pieces": [["She", 1.0, 0], ["arrived", 0.0, 0], ["off", 0.0, 0], ["Ha", 1.0, 0], ["gu", 0.0, 1], ["shi", 0.0, 1], ["Beach", 0.96, 0], ["on", 0.0, 0], ["the", 0.0, 0], ["twenty", 0.0, 0], ["first", 0.0, 0], ["and", 0.08, 0], ["operated", 0.0, 0], ["there", 0.0, 0], ["through", 0.0, 0], ["the", 0.0, 0], ["end", 0.0, 0], ["of", 0.0, 0], ["the", 0.0, 0], ["month", 0.0, 0], [".", 1.0, 1]]},
+        {"label": "Numbers only", "task": "NORM", "input": "the meeting starts at three thirty p m on june fifteenth twenty twenty four", "pieces": [["the", 0.0, 0], ["meeting", 0.0, 0], ["starts", 0.0, 0], ["at", 0.0, 0], ["3:30", 0.99, 0], ["pm", 0.95, 0], ["on", 0.0, 0], ["June", 0.7, 0], ["15,", 1.0, 0], ["20", 0.98, 0], ["24", 0.96, 1]]},
+        {"label": "Spelling", "task": "SPELLING", "input": "have a grate day at the meeting tomorrow mourning", "pieces": [["have", 0.0, 0], ["a", 0.0, 0], ["great", 0.65, 0], ["day", 0.0, 0], ["at", 0.0, 0], ["the", 0.0, 0], ["meeting", 0.0, 0], ["tomorrow", 0.0, 0], ["morning", 0.72, 0]]},
+        {"label": "Nothing to change", "task": "NO_TOKEN", "input": "males had a median income of twenty five thousand dollars versus twenty three thousand five hundred ninety four dollars for females.", "pieces": [["male", 0.0, 0], ["s", 0.0, 1], ["had", 0.0, 0], ["a", 0.0, 0], ["median", 0.0, 0], ["income", 0.0, 0], ["of", 0.0, 0], ["twenty", 0.0, 0], ["five", 0.0, 0], ["thousand", 0.0, 0], ["dollars", 0.0, 0], ["versus", 0.0, 0], ["twenty", 0.0, 0], ["three", 0.0, 0], ["thousand", 0.0, 0], ["five", 0.0, 0], ["hundred", 0.0, 0], ["nine", 0.0, 0], ["t", 0.0, 1], ["y", 0.0, 1], ["four", 0.0, 0], ["dollars", 0.0, 0], ["for", 0.0, 0], ["female", 0.0, 0], ["s", 0.0, 1], [".", 0.0, 1]]}
+    ]
+    </script>
+    <script>
+    (function () {
+        var demo = document.getElementById('pg-demo');
+        var data = document.getElementById('pg-examples');
+        if (!demo || !data) return;
+
+        var examples;
+        try { examples = JSON.parse(data.textContent); } catch (e) { return; }
+        if (!examples.length) return;
+
+        var tabs = demo.querySelector('[data-role="tabs"]');
+        var inputEl = demo.querySelector('[data-role="input"]');
+        var outputEl = demo.querySelector('[data-role="output"]');
+        var rowEl = demo.querySelector('[data-role="row"]');
+        var summaryEl = demo.querySelector('[data-role="summary"]');
+        var buttons = [];
+
+        function show(i) {
+            var ex = examples[i];
+            inputEl.textContent = ex.input;
+            outputEl.textContent = '';
+            rowEl.textContent = '';
+            var generated = [];
+
+            ex.pieces.forEach(function (piece, k) {
+                var text = piece[0], p = piece[1], joined = piece[2];
+                var isGen = p >= 0.5;
+                if (k > 0 && !joined) outputEl.appendChild(document.createTextNode(' '));
+                if (isGen) {
+                    var mark = document.createElement('span');
+                    mark.className = 'fix';
+                    mark.textContent = text;
+                    outputEl.appendChild(mark);
+                    generated.push(text);
+                } else {
+                    outputEl.appendChild(document.createTextNode(text));
+                }
+
+                var cell = document.createElement('span');
+                cell.className = isGen ? 'pg-cell is-gen' : 'pg-cell';
+                cell.style.setProperty('--p', p);
+                var box = document.createElement('span');
+                box.className = 'pg-piece';
+                box.textContent = text;
+                var val = document.createElement('span');
+                val.className = 'pg-val';
+                val.textContent = p.toFixed(2);
+                cell.appendChild(box);
+                cell.appendChild(val);
+                rowEl.appendChild(cell);
+                rowEl.appendChild(document.createTextNode(' '));
+            });
+            outputEl.normalize();
+
+            summaryEl.textContent = generated.length
+                ? 'Pieces the gate generates, with p_gen at 0.5 or above: ' + generated.join(' ') + '. Every other piece is copied from the input.'
+                : 'The gate copies every piece from the input; no p_gen is above 0.5.';
+            buttons.forEach(function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+        }
+
+        examples.forEach(function (ex, i) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'pg-tab';
+            b.textContent = ex.label;
+            b.addEventListener('click', function () { show(i); });
+            tabs.appendChild(b);
+            buttons.push(b);
+        });
+        tabs.hidden = false;
+        show(0);
     })();
     </script>
 </body>
